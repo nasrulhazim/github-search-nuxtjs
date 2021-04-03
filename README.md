@@ -20,6 +20,8 @@ CREATE TABLE `searches` (
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ```
 
+For MySQL username, I use default installed in Mac - `root` and password is empty.
+
 ## Build Setup
 
 ```bash
@@ -37,4 +39,16 @@ $ yarn start
 $ yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Usage
+
+It's required to have the [GitHub Personal Access Token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) in order to use this application.
+
+The scope should be enough with `repo` only.
+
+Once the token generated, copy it and save it somewhere.
+
+Before use the app, make sure you already install the dependencies as stated in Build Step above. Then run `yarn dev`.
+
+Go to your browser, type: `http://localhost:3000`. You can paste the GitHub Personal Access Token in the Token input. 
+
+Demo usage as per this YouTube [link](https://youtu.be/qIPsyfdJjic)
