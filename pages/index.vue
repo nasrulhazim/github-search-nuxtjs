@@ -100,6 +100,25 @@
         let data = await response.json();
         this.items = data.items;
         this.total_count = data.total_count;
+        fetch('api/github/search', {
+          method: 'POST', // or 'PUT'
+          headers: {
+            'Content-Type': 'application/json',
+            // 'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: JSON.stringify({
+            type: this.type,
+            term: this.term,
+            responses: data
+          }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
       }
     }
   }
