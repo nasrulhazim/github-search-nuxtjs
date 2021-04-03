@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-6">
     <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
       <div class="px-4 py-5 sm:px-6">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -40,9 +40,13 @@
             <li v-for="item in items" class="relative bg-white py-5 px-4 hover:bg-gray-50 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
               <div class="flex justify-between space-x-3">
                 <div class="min-w-0 flex-1">
-                  <p class="line-clamp-2 text-sm text-gray-600">
+                  <p class="text-sm font-medium text-gray-900" id="privacy-option-1-label">
                     {{ item.name }}
                   </p>
+                  <p  v-if="item.hasOwnProperty('description')" class="text-sm text-gray-500">
+                    {{ item.description }}
+                  </p>
+                  <a v-if="item.hasOwnProperty('html_url')" class="text-indigo-300 hover:text-indigo-700" target="_blank" :href="item.html_url">{{ item.html_url }}</a>
                 </div>
               </div>
             </li>
